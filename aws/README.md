@@ -56,3 +56,13 @@ terraform apply
 - A Terraform configuration describing resources Terraform should manage. This configuration is expected to change over time.
 - A hidden .terraform directory, which Terraform uses to manage cached provider plugins and modules, record which workspace is currently active, and record the last known backend configuration in case it needs to migrate state on the next run. This directory is automatically managed by Terraform, and is created during initialization.
 - State data, if the configuration uses the default local backend. This is managed by Terraform in a terraform.tfstate file (if the directory only uses the default workspace) or a terraform.tfstate.d directory
+
+# To destroy terraform instance 
+Example:
+```
+# terraform state list | grep aws_instance
+# terraform destroy -target aws_instance.avanzar_server_terraform
+.....
+Destroy complete! Resources: 1 destroyed.
+```
+terraform destroy will destryp all resource managed by terraform 
